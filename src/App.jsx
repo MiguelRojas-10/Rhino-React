@@ -1,5 +1,4 @@
-import Login from './pages/Login/Login.jsx'
-
+import Inicio from './pages/Inicio/Inicio.jsx'
 function App() {
   return <Login />
 }
