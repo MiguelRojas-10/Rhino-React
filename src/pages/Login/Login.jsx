@@ -1,7 +1,17 @@
 import './Login.css'
 import logo from '../../Images/Logo.png'
+import { createElement, useState } from 'react'
+import Inicio from '../Inicio/Inicio.jsx'
 
 function Login() {
+  const [mostrarInicio, setMostrarInicio] = useState(false)
+
+  if (mostrarInicio) {
+    return createElement(Inicio, {
+      onCerrarSesion: () => setMostrarInicio(false),
+    })
+  }
+
   return (
     <>
   <meta charSet="UTF-8" />
@@ -43,19 +53,32 @@ function Login() {
         </button>
       </div>
       <div className="seccion-login">
-        <div id="tab-empleado" className="contenido-tab en-pantalla">
+        <form
+          id="tab-empleado"
+          className="contenido-tab en-pantalla"
+          onSubmit={(event) => {
+            event.preventDefault()
+            setMostrarInicio(true)
+          }}
+        >
           <h2>Ingreso: Empleado</h2>
-          <input type="text" id="input-user-empleado" placeholder="Usuario" />
+          <input
+            type="text"
+            id="input-user-empleado"
+            placeholder="Usuario"
+            required
+          />
           <input
             type="password"
             id="input-pass-empleado"
             placeholder="Contraseña"
+            required
           />
-          <button className="btn-login" onclick="validarLogin('empleado')">
+          <button className="btn-login" type="submit">
             Iniciar sesión
           </button>
           <p id="error-empleado" className="mensaje-error" />
-        </div>
+        </form>
         <div id="tab-analista" className="contenido-tab">
           <h2>Ingreso: Analista</h2>
           <input type="text" id="input-user-analista" placeholder="Usuario" />

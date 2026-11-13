@@ -1,5 +1,9 @@
 import './Inicio.css'
-function Inicio(){
+import diacivico from '../../Images/Imagen1.png'
+import nuevagerente from '../../Images/Imagen2.png'
+import mantenimiento from '../../Images/Imagen3.png'
+import logorhino from '../../Images/LogoAmarillo.png'
+function Inicio({ onCerrarSesion }){
     return(
 
 <>
@@ -15,7 +19,7 @@ function Inicio(){
   <link rel="stylesheet" href="style.css" />
   <header className="header-principal">
     <div className="seccion-superior">
-      <img src="LogoAmarillo.png" alt="Logo Rhino" className="logo-pequeno" />
+      <img src={logorhino} alt="Logo Rhino" className="logo-pequeno" />
       <nav className="seccion-navegacion">
         <a href="Principal.html" id="nav-inicio" className="nav-btn activo">
           Inicio
@@ -70,7 +74,7 @@ function Inicio(){
             Cargando...
           </span>
         </div>
-        <span className="btn-cerrar-sesion" onclick="cerrarSesion()">
+        <span className="btn-cerrar-sesion" onClick={onCerrarSesion}>
           Cerrar sesión
         </span>
       </div>
@@ -81,7 +85,7 @@ function Inicio(){
       <h1 className="titulo-seccion">Tablón de Anuncios</h1>
       {/* NOTICIA 1: Imagen a la Izquierda */}
       <article className="tarjeta-noticia noticia-1 img-izquierda">
-        <img src="Imagen1.png" alt="Día Cívico" className="img-noticia" />
+        <img src={diacivico} alt="Día Cívico" className="img-noticia" />
         <div className="texto-noticia">
           <h2>Jornada de Trabajo Remoto - Día Cívico</h2>
           <p>
@@ -97,7 +101,7 @@ function Inicio(){
       </article>
       {/* NOTICIA 2: Imagen a la Derecha */}
       <article className="tarjeta-noticia noticia-2 img-derecha">
-        <img src="Imagen2.png" alt="Nueva Gerente" className="img-noticia" />
+        <img src={nuevagerente} alt="Nueva Gerente" className="img-noticia" />
         <div className="texto-noticia">
           <h2>Bienvenida a nuestra nueva Gerente General</h2>
           <p>
@@ -112,7 +116,7 @@ function Inicio(){
       </article>
       {/* NOTICIA 3: Imagen a la Izquierda */}
       <article className="tarjeta-noticia noticia-3 img-izquierda">
-        <img src="Imagen3.png" alt="Mantenimiento" className="img-noticia" />
+        <img src={mantenimiento} alt="Mantenimiento" className="img-noticia" />
         <div className="texto-noticia">
           <h2>Actualización del Sistema de Evaluaciones</h2>
           <p>
