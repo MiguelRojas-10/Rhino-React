@@ -1,15 +1,14 @@
 import './Login.css'
 import logo from '../../Images/Logo.png'
-import { createElement, useState } from 'react'
-import Inicio from '../Inicio/Inicio.jsx'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
-  const [mostrarInicio, setMostrarInicio] = useState(false)
-
-  if (mostrarInicio) {
-    return createElement(Inicio, {
-      onCerrarSesion: () => setMostrarInicio(false),
-    })
+  const navigate = useNavigate()
+  const [rolActivo, setRolActivo] = useState('empleado')
+  const irAInicio = (event) => {
+    event.preventDefault()
+    navigate('/inicio')
   }
 
   return (
@@ -37,29 +36,35 @@ function Login() {
     <div className="mitad-derecha">
       <div className="tab-bar">
         <button
-          className="tab-btn activo"
-          onclick="abrirTab(event, 'tab-empleado')"
+          className={`tab-btn ${rolActivo === 'empleado' ? 'activo' : ''}`}
+          onClick={() => setRolActivo('empleado')}
         >
           Empleado
         </button>
-        <button className="tab-btn" onclick="abrirTab(event, 'tab-analista')">
+        <button
+          className={`tab-btn ${rolActivo === 'analista' ? 'activo' : ''}`}
+          onClick={() => setRolActivo('analista')}
+        >
           Analista
         </button>
-        <button className="tab-btn" onclick="abrirTab(event, 'tab-supervisor')">
+        <button
+          className={`tab-btn ${rolActivo === 'supervisor' ? 'activo' : ''}`}
+          onClick={() => setRolActivo('supervisor')}
+        >
           Supervisor
         </button>
-        <button className="tab-btn" onclick="abrirTab(event, 'tab-gerente')">
+        <button
+          className={`tab-btn ${rolActivo === 'gerente' ? 'activo' : ''}`}
+          onClick={() => setRolActivo('gerente')}
+        >
           Gerente general
         </button>
       </div>
       <div className="seccion-login">
         <form
           id="tab-empleado"
-          className="contenido-tab en-pantalla"
-          onSubmit={(event) => {
-            event.preventDefault()
-            setMostrarInicio(true)
-          }}
+          className={`contenido-tab ${rolActivo === 'empleado' ? 'en-pantalla' : ''}`}
+          onSubmit={irAInicio}
         >
           <h2>Ingreso: Empleado</h2>
           <input
@@ -79,7 +84,11 @@ function Login() {
           </button>
           <p id="error-empleado" className="mensaje-error" />
         </form>
-        <div id="tab-analista" className="contenido-tab">
+        <form
+          id="tab-analista"
+          className={`contenido-tab ${rolActivo === 'analista' ? 'en-pantalla' : ''}`}
+          onSubmit={irAInicio}
+        >
           <h2>Ingreso: Analista</h2>
           <input type="text" id="input-user-analista" placeholder="Usuario" />
           <input
@@ -87,12 +96,16 @@ function Login() {
             id="input-pass-analista"
             placeholder="Contraseña"
           />
-          <button className="btn-login" onclick="validarLogin('analista')">
+          <button className="btn-login" type="submit">
             Iniciar sesión
           </button>
           <p id="error-analista" className="mensaje-error" />
-        </div>
-        <div id="tab-supervisor" className="contenido-tab">
+        </form>
+        <form
+          id="tab-supervisor"
+          className={`contenido-tab ${rolActivo === 'supervisor' ? 'en-pantalla' : ''}`}
+          onSubmit={irAInicio}
+        >
           <h2>Ingreso: Supervisor</h2>
           <input type="text" id="input-user-supervisor" placeholder="Usuario" />
           <input
@@ -100,12 +113,16 @@ function Login() {
             id="input-pass-supervisor"
             placeholder="Contraseña"
           />
-          <button className="btn-login" onclick="validarLogin('supervisor')">
+          <button className="btn-login" type="submit">
             Iniciar sesión
           </button>
           <p id="error-supervisor" className="mensaje-error" />
-        </div>
-        <div id="tab-gerente" className="contenido-tab">
+        </form>
+        <form
+          id="tab-gerente"
+          className={`contenido-tab ${rolActivo === 'gerente' ? 'en-pantalla' : ''}`}
+          onSubmit={irAInicio}
+        >
           <h2>Ingreso: Gerente General</h2>
           <input type="text" id="input-user-gerente" placeholder="Usuario" />
           <input
@@ -113,11 +130,11 @@ function Login() {
             id="input-pass-gerente"
             placeholder="Contraseña"
           />
-          <button className="btn-login" onclick="validarLogin('gerente')">
+          <button className="btn-login" type="submit">
             Iniciar sesión
           </button>
           <p id="error-gerente" className="mensaje-error" />
-        </div>
+        </form>
       </div>
       {/* NUEVOS BOTONES DE ACCIÓN DE CONTRASEÑA */}
       {/* LOS BOTONES DEBEN ESTAR JUNTOS */}
