@@ -1,9 +1,12 @@
+import '../../styles/common.css'
 import './Inicio.css'
 import diacivico from '../../Images/Imagen1.png'
 import nuevagerente from '../../Images/Imagen2.png'
 import mantenimiento from '../../Images/Imagen3.png'
-import logorhino from '../../Images/LogoAmarillo.png'
-function Inicio({ onCerrarSesion }){
+import { createElement } from 'react'
+import Navbar from '../../components/Navbar.jsx'
+
+function Inicio(){
     return(
 
 <>
@@ -16,69 +19,7 @@ function Inicio({ onCerrarSesion }){
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <header className="header-principal">
-    <div className="seccion-superior">
-      <img src={logorhino} alt="Logo Rhino" className="logo-pequeno" />
-      <nav className="seccion-navegacion">
-        <a href="/inicio" id="nav-inicio" className="nav-btn activo">
-          Inicio
-        </a>
-        <a href="/horarios" id="nav-horarios" className="nav-btn">
-          Horarios
-        </a>
-        <a
-          href="/gestion-horarios"
-          id="nav-gestion-horarios"
-          className="nav-btn"
-        >
-          Gestión de Horarios
-        </a>
-        <a href="/empleados" id="nav-personal" className="nav-btn">
-          Personal
-        </a>
-        <a href="/solicitudes" id="nav-solicitudes" className="nav-btn">
-          Solicitudes
-        </a>
-        <a
-          href="/gestion-solicitudes"
-          id="nav-gestion-solicitudes"
-          className="nav-btn"
-        >
-          Gestión de solicitudes
-        </a>
-        <a href="/resultados" id="nav-resultados" className="nav-btn">
-          Resultados de evaluación
-        </a>
-        <a
-          href="/evaluaciones"
-          id="nav-gestion-evaluaciones"
-          className="nav-btn"
-        >
-          Gestión de evaluaciones
-        </a>
-        <a
-          href="/ofertas"
-          id="nav-gestion-ofertas"
-          className="nav-btn"
-        >
-          Gestionar ofertas laborales
-        </a>
-      </nav>
-      <div className="contenedor-perfil">
-        <div className="info-usuario">
-          <span id="nombre-usuario" className="nombre">
-            Cargando...
-          </span>
-          <span id="rol-usuario" className="rol">
-            Cargando...
-          </span>
-        </div>
-        <span className="btn-cerrar-sesion" onClick={onCerrarSesion}>
-          Cerrar sesión
-        </span>
-      </div>
-    </div>
-  </header>
+  {createElement(Navbar)}
   <main className="contenido-pagina">
     <div className="contenedor-noticias">
       <h1 className="titulo-seccion">Tablón de Anuncios</h1>

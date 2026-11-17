@@ -1,9 +1,9 @@
 import { createElement } from 'react'
-import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Inicio from './pages/Inicio/Inicio.jsx'
 import Login from './pages/Login/Login.jsx'
 import GestionSolicitudes from './pages/Gestion solicitudes/Gestion-solicitudes.jsx'
-import Postulantes from './pages/Oferta postulates/Postulantes.jsx'
+import Postulantes from './pages/Oferta postulantes/Postulantes.jsx'
 import Solicitudes from './pages/Solicitudes/Solicitudes.jsx'
 import Evaluaciones from './pages/Gestion evaluaciones/Evaluaciones.jsx'
 import Aplicaciones from './pages/Aplicaciones visitante/Aplicaciones.jsx'
@@ -13,11 +13,6 @@ import Empleados from './pages/Gestion Empleados/Empleados.jsx'
 import Ofertas from './pages/Gestion ofertas/Ofertas.jsx'
 import Resultados from './pages/Resultados evaluacion/Resultados.jsx'
 
-function RutaInicio() {
-  const navigate = useNavigate()
-  return createElement(Inicio, { onCerrarSesion: () => navigate('/') })
-}
-
 function App() {
   return createElement(
     BrowserRouter,
@@ -26,7 +21,7 @@ function App() {
       Routes,
       null,
       createElement(Route, { path: '/', element: createElement(Login) }),
-      createElement(Route, { path: '/inicio', element: createElement(RutaInicio) }),
+      createElement(Route, { path: '/inicio', element: createElement(Inicio) }),
       createElement(
         Route,
         { path: '/ofertas-postulantes', element: createElement(Postulantes) },

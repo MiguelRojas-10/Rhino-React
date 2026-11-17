@@ -1,3 +1,4 @@
+import '../../styles/common.css'
 import './Login.css'
 import logo from '../../Images/Logo.png'
 import { useState } from 'react'
@@ -8,6 +9,14 @@ function Login() {
   const [rolActivo, setRolActivo] = useState('empleado')
   const irAInicio = (event) => {
     event.preventDefault()
+    const nombresPorRol = {
+      empleado: 'Mateo García',
+      analista: 'Valeria Rojas',
+      supervisor: 'Andrés Castillo',
+      gerente: 'Camila Mendoza',
+    }
+    localStorage.setItem('sesionRol', rolActivo)
+    localStorage.setItem('sesionNombre', nombresPorRol[rolActivo])
     navigate('/inicio')
   }
 

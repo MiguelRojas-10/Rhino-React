@@ -51,7 +51,7 @@ export function validarLogin(rol) {
         localStorage.setItem('sesionNombre', nombreEjemplo);
 
         // Redireccionar
-        window.location.href = "Principal.html";
+        window.location.href = "/inicio";
     } else {
         contenedorError.textContent = "Credenciales incorrectas";
     }
@@ -64,7 +64,7 @@ export function cerrarSesion() {
     localStorage.removeItem('sesionNombre');
 
     // Redirigimos al index
-    window.location.href = "index.html";
+    window.location.href = "/";
 }
 
 // ================= LÓGICA PARA GESTIÓN DE OFERTAS =================
@@ -417,73 +417,4 @@ export function retirarAplicacion(boton) {
         }
     }
 }
-// ================= LÓGICA DEL MENÚ SUPERIOR (Principal.html y futuras páginas) =================
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const spanNombre = document.getElementById('nombre-usuario');
-    const spanRol = document.getElementById('rol-usuario');
-
-    if (spanNombre && spanRol) {
-        const nombreGuardado = localStorage.getItem('sesionNombre') || "Usuario Desconocido";
-        let rolGuardado = localStorage.getItem('sesionRol') || "empleado";
-
-        // 1. INYECCIÓN DE DATOS DEL USUARIO
-        let nombreRolVisible = "";
-        if (rolGuardado === 'empleado') nombreRolVisible = "Empleado";
-        if (rolGuardado === 'analista') nombreRolVisible = "Analista";
-        if (rolGuardado === 'supervisor') nombreRolVisible = "Supervisor";
-        if (rolGuardado === 'gerente') nombreRolVisible = "Gerente General";
-
-        spanNombre.textContent = nombreGuardado;
-        spanRol.textContent = nombreRolVisible;
-
-
-        // 2. LÓGICA DE PERMISOS (MOSTRAR/OCULTAR BOTONES)
-
-        // Primero, ocultamos todos los botones por defecto
-        const todosLosBotones = document.querySelectorAll('.nav-btn');
-        todosLosBotones.forEach(btn => btn.style.display = 'none');
-
-        // Todos los roles comparten estos 3 botones, así que los mostramos siempre
-        document.getElementById('nav-inicio').style.display = 'flex';
-        document.getElementById('nav-horarios').style.display = 'flex';
-        document.getElementById('nav-solicitudes').style.display = 'flex';
-
-        // Ahora mostramos los botones específicos según el rol guardado
-        if (rolGuardado === 'empleado') {
-            document.getElementById('nav-resultados').style.display = 'flex';
-
-        } else if (rolGuardado === 'supervisor') {
-            document.getElementById('nav-gestion-horarios').style.display = 'flex';
-            document.getElementById('nav-personal').style.display = 'flex';
-            document.getElementById('nav-gestion-solicitudes').style.display = 'flex';
-
-        } else if (rolGuardado === 'analista') {
-            document.getElementById('nav-gestion-ofertas').style.display = 'flex';
-
-        } else if (rolGuardado === 'gerente') {
-            document.getElementById('nav-gestion-horarios').style.display = 'flex';
-            document.getElementById('nav-personal').style.display = 'flex';
-            document.getElementById('nav-gestion-solicitudes').style.display = 'flex';
-            document.getElementById('nav-gestion-evaluaciones').style.display = 'flex';
-        }
-
-        // 3. ARREGLO VISUAL DE LOS BORDES LATERALES
-        if (window.innerWidth > 768) {
-            const botonesVisibles = Array.from(todosLosBotones).filter(btn => btn.style.display === 'flex');
-
-            // Nos aseguramos de que todos tengan borde derecho y ninguno izquierdo por defecto
-            botonesVisibles.forEach(btn => {
-                btn.style.borderRight = '5px solid #000000';
-                btn.style.borderLeft = 'none';
-            });
-
-            // Al primer botón visible de la lista le ponemos un borde izquierdo para "cerrar" el menú
-            if (botonesVisibles.length > 0) {
-                botonesVisibles[0].style.borderLeft = '5px solid #000000';
-            }
-        }
-    }
-});
 

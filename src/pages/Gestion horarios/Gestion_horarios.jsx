@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import logoRhino from '../../Images/LogoAmarillo.png'
 import pos1 from '../../Images/Pos1.png'
 import pos2 from '../../Images/Pos2.png'
 import pos3 from '../../Images/Pos3.png'
@@ -7,7 +6,10 @@ import pos4 from '../../Images/Pos4.png'
 import pos5 from '../../Images/Pos5.png'
 import pos6 from '../../Images/Pos6.png'
 import { obtenerEmpleadoPorId } from '../../Script.js'
-import './Gestion_horarios.css'
+import '../../styles/common.css'
+
+import { createElement } from 'react'
+import Navbar from '../../components/Navbar.jsx'
 
 function GestionHorarios() {
   const [empleadoTurnoId, setEmpleadoTurnoId] = useState('')
@@ -83,70 +85,7 @@ function GestionHorarios() {
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <header className="header-principal">
-    <div className="seccion-superior">
-      <img src={logoRhino} alt="Logo Rhino" className="logo-pequeno" />
-      <nav className="seccion-navegacion">
-        {/* Links estándar, recuerda marcar "activo" en esta página */}
-        <a href="/inicio" id="nav-inicio" className="nav-btn">
-          Inicio
-        </a>
-        <a href="/horarios" id="nav-horarios" className="nav-btn">
-          Horarios
-        </a>
-        <a
-          href="/gestion-horarios"
-          id="nav-gestion-horarios"
-          className="nav-btn activo"
-        >
-          Gestión de Horarios
-        </a>
-        <a href="/empleados" id="nav-personal" className="nav-btn">
-          Personal
-        </a>
-        <a href="/solicitudes" id="nav-solicitudes" className="nav-btn">
-          Solicitudes
-        </a>
-        <a
-          href="/gestion-solicitudes"
-          id="nav-gestion-solicitudes"
-          className="nav-btn"
-        >
-          Gestión de solicitudes
-        </a>
-        <a href="/resultados" id="nav-resultados" className="nav-btn">
-          Resultados de evaluación
-        </a>
-        <a
-          href="/evaluaciones"
-          id="nav-gestion-evaluaciones"
-          className="nav-btn"
-        >
-          Gestión de evaluaciones
-        </a>
-        <a
-          href="/ofertas"
-          id="nav-gestion-ofertas"
-          className="nav-btn"
-        >
-          Gestionar ofertas laborales
-        </a>
-      </nav>
-      <div className="contenedor-perfil">
-        <div className="info-usuario">
-          <span id="nombre-usuario" className="nombre">
-            Cargando...
-          </span>
-          <span id="rol-usuario" className="rol">
-            Cargando...
-          </span>
-        </div>
-        <a href="/" className="btn-cerrar-sesion">
-          Cerrar sesión
-        </a>
-      </div>
-    </div>
-  </header>
+  {createElement(Navbar)}
   <main className="contenido-pagina">
     <div className="contenedor-gestion">
       {/* SECCIÓN 1: ASIGNAR TURNO */}
