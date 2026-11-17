@@ -16,49 +16,48 @@ function Inicio({ onCerrarSesion }){
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="style.css" />
   <header className="header-principal">
     <div className="seccion-superior">
       <img src={logorhino} alt="Logo Rhino" className="logo-pequeno" />
       <nav className="seccion-navegacion">
-        <a href="Principal.html" id="nav-inicio" className="nav-btn activo">
+        <a href="/inicio" id="nav-inicio" className="nav-btn activo">
           Inicio
         </a>
-        <a href="Horarios.html" id="nav-horarios" className="nav-btn">
+        <a href="/horarios" id="nav-horarios" className="nav-btn">
           Horarios
         </a>
         <a
-          href="GestionHorarios.html"
+          href="/gestion-horarios"
           id="nav-gestion-horarios"
           className="nav-btn"
         >
           Gestión de Horarios
         </a>
-        <a href="Personal.html" id="nav-personal" className="nav-btn">
+        <a href="/empleados" id="nav-personal" className="nav-btn">
           Personal
         </a>
-        <a href="Solicitudes.html" id="nav-solicitudes" className="nav-btn">
+        <a href="/solicitudes" id="nav-solicitudes" className="nav-btn">
           Solicitudes
         </a>
         <a
-          href="GestionSolicitudes.html"
+          href="/gestion-solicitudes"
           id="nav-gestion-solicitudes"
           className="nav-btn"
         >
           Gestión de solicitudes
         </a>
-        <a href="Resultados.html" id="nav-resultados" className="nav-btn">
+        <a href="/resultados" id="nav-resultados" className="nav-btn">
           Resultados de evaluación
         </a>
         <a
-          href="GestionEvaluaciones.html"
+          href="/evaluaciones"
           id="nav-gestion-evaluaciones"
           className="nav-btn"
         >
           Gestión de evaluaciones
         </a>
         <a
-          href="GestionOfertas.html"
+          href="/ofertas"
           id="nav-gestion-ofertas"
           className="nav-btn"
         >

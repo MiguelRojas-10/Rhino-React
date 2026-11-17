@@ -29,7 +29,7 @@ function Login() {
         En este portal usted podrá iniciar sesión para consultar todos sus
         respectivos datos como parte del personal de su respectiva empresa.
       </p>
-      <a href="ofertas_visitante.html" className="link-visitante">
+      <a href="/ofertas-postulantes" className="link-visitante">
         Para mirar las ofertas de empleo disponibles, ¡Clickee aquí!
       </a>
     </div>

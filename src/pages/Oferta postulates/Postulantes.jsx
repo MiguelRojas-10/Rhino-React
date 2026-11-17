@@ -1,3 +1,8 @@
+import './Postulates.css'
+import logoBlanco from '../../Images/LogoBlanco.png'
+
+function Postulantes() {
+  return (
 <>
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -6,15 +11,14 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="style.css" />
   <header className="header-principal">
     <div className="seccion-superior">
-      <img src="LogoBlanco.png" alt="ANKOR Logo" className="logo-pequeno" />
+      <img src={logoBlanco} alt="ANKOR Logo" className="logo-pequeno" />
       <nav className="seccion-navegacion nav-visitante">
-        <a href="ofertas_visitante.html" className="nav-btn activo">
+        <a href="/ofertas-postulantes" className="nav-btn activo">
           Ver ofertas laborales
         </a>
-        <a href="aplicaciones_visitante.html" className="nav-btn">
+        <a href="/aplicaciones-visitante" className="nav-btn">
           Ver aplicaciones
         </a>
       </nav>
@@ -24,7 +28,7 @@
             <span className="nombre">Modo Visitante</span>
             <span className="rol">Explorador de Empleo</span>
           </div>
-          <a href="index.html" className="btn-volver-inicio">
+          <a href="/" className="btn-volver-inicio">
             Volver al inicio
           </a>
         </div>
@@ -280,3 +284,7 @@
     </div>
   </div>
 </>
+  )
+}
+
+export default Postulantes
