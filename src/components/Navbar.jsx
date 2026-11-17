@@ -1,6 +1,7 @@
 import { createElement } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import logoRhino from '../Images/LogoAmarillo.png'
+import './Navbar.css'
 
 const enlaces = [
   { id: 'nav-inicio', to: '/inicio', label: 'Inicio' },
