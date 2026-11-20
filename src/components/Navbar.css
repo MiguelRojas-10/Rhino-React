@@ -44,6 +44,10 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.seccion-navegacion .nav-btn:first-child {
+  border-left: 5px solid #000000;
+}
+
 .nav-btn:hover {
   background-color: #3A7880;
 }
