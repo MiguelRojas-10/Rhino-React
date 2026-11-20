@@ -13,6 +13,14 @@ import Empleados from './pages/Gestion Empleados/Empleados.jsx'
 import Ofertas from './pages/Gestion ofertas/Ofertas.jsx'
 import Resultados from './pages/Resultados evaluacion/Resultados.jsx'
 
+function ResultadosProtegidos() {
+  if (localStorage.getItem('sesionRol') === 'gerente') {
+    return createElement(Navigate, { to: '/inicio', replace: true })
+  }
+
+  return createElement(Resultados)
+}
+
 function App() {
   return createElement(
     BrowserRouter,
@@ -36,7 +44,7 @@ function App() {
       }),
       createElement(Route, {
         path: '/resultados',
-        element: createElement(Resultados),
+        element: createElement(ResultadosProtegidos),
       }),
       createElement(Route, {
         path: '/horarios',

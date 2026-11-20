@@ -63,7 +63,6 @@ const enlacesPorRol = {
     'nav-personal',
     'nav-solicitudes',
     'nav-gestion-solicitudes',
-    'nav-resultados',
     'nav-gestion-evaluaciones',
   ],
 }

@@ -412,7 +412,7 @@ export function abrirModalAplicar(nombreOferta) {
 }
 
 // Cerrar modal de postulación
-function cerrarModalAplicar() {
+export function cerrarModalAplicar() {
     const modal = document.getElementById('modal-aplicar');
     if (modal) {
         modal.classList.add('oculto');

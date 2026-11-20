@@ -1,5 +1,11 @@
 import './Postulates.css'
 import logoBlanco from '../../Images/LogoBlanco.png'
+import {
+  abrirModalAplicar,
+  cerrarModalAplicar,
+  enviarAplicacion,
+  toggleDetalleOferta,
+} from '../../Script.js'
 
 function Postulantes() {
   return (
@@ -60,13 +66,13 @@ function Postulantes() {
             <div className="acciones-postulante">
               <button
                 className="btn-desplegar"
-                onclick="toggleDetalleOferta('oferta-1')"
+                onClick={() => toggleDetalleOferta('oferta-1')}
               >
                 Más información
               </button>
               <button
                 className="btn-contratar"
-                onclick="abrirModalAplicar('Desarrollador Java Junior')"
+                onClick={() => abrirModalAplicar('Desarrollador Java Junior')}
               >
                 Aplicar
               </button>
@@ -122,13 +128,13 @@ function Postulantes() {
             <div className="acciones-postulante">
               <button
                 className="btn-desplegar"
-                onclick="toggleDetalleOferta('oferta-2')"
+                onClick={() => toggleDetalleOferta('oferta-2')}
               >
                 Más información
               </button>
               <button
                 className="btn-contratar"
-                onclick="abrirModalAplicar('Analista de Soporte Técnico')"
+                onClick={() => abrirModalAplicar('Analista de Soporte Técnico')}
               >
                 Aplicar
               </button>
@@ -183,13 +189,13 @@ function Postulantes() {
             <div className="acciones-postulante">
               <button
                 className="btn-desplegar"
-                onclick="toggleDetalleOferta('oferta-3')"
+                onClick={() => toggleDetalleOferta('oferta-3')}
               >
                 Más información
               </button>
               <button
                 className="btn-contratar"
-                onclick="abrirModalAplicar('Coordinador de Almacén')"
+                onClick={() => abrirModalAplicar('Coordinador de Almacén')}
               >
                 Aplicar
               </button>
@@ -240,7 +246,7 @@ function Postulantes() {
       <p className="subtitulo-modal" id="nombre-oferta-modal">
         Cargo seleccionado
       </p>
-      <form className="formulario-modal" onsubmit="enviarAplicacion(event)">
+      <form className="formulario-modal" onSubmit={enviarAplicacion}>
         <div className="grupo-input">
           <label>Nombre Completo:</label>
           <input
@@ -272,7 +278,7 @@ function Postulantes() {
           <button
             type="button"
             className="btn-cancelar"
-            onclick="cerrarModalAplicar()"
+            onClick={cerrarModalAplicar}
           >
             Cancelar
           </button>

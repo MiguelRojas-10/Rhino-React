@@ -3,6 +3,7 @@ import './Login.css'
 import logo from '../../Images/Logo.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { abrirModal, cerrarModalPorId } from '../../Script.js'
 
 function Login() {
   const navigate = useNavigate()
@@ -148,10 +149,16 @@ function Login() {
       {/* NUEVOS BOTONES DE ACCIÓN DE CONTRASEÑA */}
       {/* LOS BOTONES DEBEN ESTAR JUNTOS */}
       <div className="contenedor-acciones-extra">
-        <button className="tab-btn" onclick="abrirModal('modal-recuperar')">
+        <button
+          className="tab-btn"
+          onClick={() => abrirModal('modal-recuperar')}
+        >
           Olvidé mi contraseña
         </button>
-        <button className="tab-btn" onclick="abrirModal('modal-cambiar')">
+        <button
+          className="tab-btn"
+          onClick={() => abrirModal('modal-cambiar')}
+        >
           Cambiar contraseña
         </button>
       </div>
@@ -172,7 +179,7 @@ function Login() {
       <div className="botones-modal">
         <button
           className="btn-cancelar"
-          onclick="cerrarModal('modal-recuperar')"
+          onClick={() => cerrarModalPorId('modal-recuperar')}
         >
           Cancelar
         </button>
@@ -206,7 +213,10 @@ function Login() {
         placeholder="Confirmar nueva contraseña"
       />
       <div className="botones-modal">
-        <button className="btn-cancelar" onclick="cerrarModal('modal-cambiar')">
+        <button
+          className="btn-cancelar"
+          onClick={() => cerrarModalPorId('modal-cambiar')}
+        >
           Cancelar
         </button>
         <button className="btn-login" style={{ width: "100%" }}>

@@ -1,4 +1,5 @@
 import logoBlanco from '../../Images/LogoBlanco.png'
+import { retirarAplicacion } from '../../Script.js'
 
 function Aplicaciones() {
   return (
@@ -60,7 +61,10 @@ function Aplicaciones() {
               justifyContent: "flex-end"
             }}
           >
-            <button className="btn-retirar" onclick="retirarAplicacion(this)">
+            <button
+              className="btn-retirar"
+              onClick={(event) => retirarAplicacion(event.currentTarget)}
+            >
               Retirar Aplicación
             </button>
           </div>
@@ -91,7 +95,10 @@ function Aplicaciones() {
               justifyContent: "flex-end"
             }}
           >
-            <button className="btn-retirar" onclick="retirarAplicacion(this)">
+            <button
+              className="btn-retirar"
+              onClick={(event) => retirarAplicacion(event.currentTarget)}
+            >
               Retirar Aplicación
             </button>
           </div>
