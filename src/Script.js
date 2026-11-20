@@ -1,3 +1,10 @@
+import pos1 from './Images/Pos1.png';
+import pos2 from './Images/Pos2.png';
+import pos3 from './Images/Pos3.png';
+import pos4 from './Images/Pos4.png';
+import pos5 from './Images/Pos5.png';
+import pos6 from './Images/Pos6.png';
+
 // ================= LÓGICA DEL LOGIN (index.html) =================
 
 export function abrirTab(evento, idTab) {
@@ -103,12 +110,12 @@ export function obtenerEmpleadoPorId(idEmpleado) {
 
 // Base de datos simulada de empleados
 const baseDatosEmpleados = [
-    { documento: "1111111111", nombres: "Carlos", apellidos: "Ramírez", tipoDoc: "CC", nacimiento: "1990-05-15", correo: "cramirez@rhinosas.com.co", telefono: "3001111111", foto: "Pos1.png", hNormales: 160, hExtra: 10, hNocturno: 5, hExtraNoc: 2 },
-    { documento: "2222222222", nombres: "Laura", apellidos: "Gómez", tipoDoc: "CC", nacimiento: "1992-08-20", correo: "lgomez@rhinosas.com.co", telefono: "3002222222", foto: "Pos2.png", hNormales: 150, hExtra: 0, hNocturno: 15, hExtraNoc: 0 },
-    { documento: "3333333333", nombres: "Mateo", apellidos: "Vargas", tipoDoc: "CC", nacimiento: "1995-11-10", correo: "mvargas@rhinosas.com.co", telefono: "3003333333", foto: "Pos3.png", hNormales: 160, hExtra: 12, hNocturno: 0, hExtraNoc: 0 },
-    { documento: "4444444444", nombres: "Andrea", apellidos: "Castro", tipoDoc: "CC", nacimiento: "1991-03-25", correo: "acastro@rhinosas.com.co", telefono: "3004444444", foto: "Pos4.png", hNormales: 160, hExtra: 5, hNocturno: 20, hExtraNoc: 5 },
-    { documento: "5555555555", nombres: "Felipe", apellidos: "Martínez", tipoDoc: "CC", nacimiento: "1988-07-30", correo: "fmartinez@rhinosas.com.co", telefono: "3005555555", foto: "Pos5.png", hNormales: 140, hExtra: 0, hNocturno: 0, hExtraNoc: 0 },
-    { documento: "6666666666", nombres: "Valentina", apellidos: "Ruiz", tipoDoc: "CE", nacimiento: "1997-12-05", correo: "vruiz@rhinosas.com.co", telefono: "3006666666", foto: "Pos6.png", hNormales: 160, hExtra: 8, hNocturno: 10, hExtraNoc: 4 }
+    { documento: "1111111111", nombres: "Carlos", apellidos: "Ramírez", tipoDoc: "CC", nacimiento: "1990-05-15", correo: "cramirez@rhinosas.com.co", telefono: "3001111111", foto: pos1, hNormales: 160, hExtra: 10, hNocturno: 5, hExtraNoc: 2 },
+    { documento: "2222222222", nombres: "Laura", apellidos: "Gómez", tipoDoc: "CC", nacimiento: "1992-08-20", correo: "lgomez@rhinosas.com.co", telefono: "3002222222", foto: pos2, hNormales: 150, hExtra: 0, hNocturno: 15, hExtraNoc: 0 },
+    { documento: "3333333333", nombres: "Mateo", apellidos: "Vargas", tipoDoc: "CC", nacimiento: "1995-11-10", correo: "mvargas@rhinosas.com.co", telefono: "3003333333", foto: pos3, hNormales: 160, hExtra: 12, hNocturno: 0, hExtraNoc: 0 },
+    { documento: "4444444444", nombres: "Andrea", apellidos: "Castro", tipoDoc: "CC", nacimiento: "1991-03-25", correo: "acastro@rhinosas.com.co", telefono: "3004444444", foto: pos4, hNormales: 160, hExtra: 5, hNocturno: 20, hExtraNoc: 5 },
+    { documento: "5555555555", nombres: "Felipe", apellidos: "Martínez", tipoDoc: "CC", nacimiento: "1988-07-30", correo: "fmartinez@rhinosas.com.co", telefono: "3005555555", foto: pos5, hNormales: 140, hExtra: 0, hNocturno: 0, hExtraNoc: 0 },
+    { documento: "6666666666", nombres: "Valentina", apellidos: "Ruiz", tipoDoc: "CE", nacimiento: "1997-12-05", correo: "vruiz@rhinosas.com.co", telefono: "3006666666", foto: pos6, hNormales: 160, hExtra: 8, hNocturno: 10, hExtraNoc: 4 }
 ];
 
 export function buscarEmpleado() {
@@ -201,7 +208,7 @@ export function crearResolucionSolicitud(accion, nombreEmpleado, idSolicitud) {
 
 // Base de datos específica para evaluaciones con roles variados
 const bdEvaluaciones = {
-    "1111111111": { nombre: "Carlos Ramírez", rol: "Desarrollador Backend", foto: "Pos1.png",
+    "1111111111": { nombre: "Carlos Ramírez", rol: "Desarrollador Backend", foto: pos1,
         criterios: {
             puntualidad: ["Hora de llegada", "Tiempo de culminación de tareas"],
             calidad: ["Precisión en entregables", "Atención al detalle"],
@@ -209,7 +216,7 @@ const bdEvaluaciones = {
             cumplimiento: ["Seguimiento de normativas", "Asistencia a reuniones"]
         }
     },
-    "2222222222": { nombre: "Laura Gómez", rol: "Asistente Contable", foto: "Pos2.png",
+    "2222222222": { nombre: "Laura Gómez", rol: "Asistente Contable", foto: pos2,
         criterios: {
             puntualidad: ["Hora de llegada", "Entrega de balances a tiempo"],
             calidad: ["Cero errores en digitación", "Organización de facturas"],
@@ -217,7 +224,7 @@ const bdEvaluaciones = {
             cumplimiento: ["Uso correcto del software contable", "Asistencia a reuniones"]
         }
     },
-    "3333333333": { nombre: "Mateo Vargas", rol: "Personal de Aseo", foto: "Pos3.png",
+    "3333333333": { nombre: "Mateo Vargas", rol: "Personal de Aseo", foto: pos3,
         criterios: {
             puntualidad: ["Hora de llegada", "Cumplimiento de rondas diarias"],
             calidad: ["Limpieza de áreas comunes", "Manejo adecuado de insumos"],
@@ -225,7 +232,7 @@ const bdEvaluaciones = {
             cumplimiento: ["Uso de dotación y EPP", "Seguimiento de normativas"]
         }
     },
-    "4444444444": { nombre: "Andrea Castro", rol: "Coordinadora de Transporte", foto: "Pos4.png",
+    "4444444444": { nombre: "Andrea Castro", rol: "Coordinadora de Transporte", foto: pos4,
         criterios: {
             puntualidad: ["Hora de llegada", "Despacho de vehículos a tiempo"],
             calidad: ["Optimización de rutas", "Control de combustible"],
@@ -233,7 +240,7 @@ const bdEvaluaciones = {
             cumplimiento: ["Revisión de documentos vehiculares", "Reporte de siniestros"]
         }
     },
-    "5555555555": { nombre: "Felipe Martínez", rol: "Diseñador UX/UI", foto: "Pos5.png",
+    "5555555555": { nombre: "Felipe Martínez", rol: "Diseñador UX/UI", foto: pos5,
         criterios: {
             puntualidad: ["Hora de llegada", "Tiempo de culminación de prototipos"],
             calidad: ["Innovación visual", "Atención al detalle en interfaces"],
@@ -241,7 +248,7 @@ const bdEvaluaciones = {
             cumplimiento: ["Seguimiento de guías de marca", "Asistencia a dailys"]
         }
     },
-    "6666666666": { nombre: "Valentina Ruiz", rol: "Ingeniera de Requisitos", foto: "Pos6.png",
+    "6666666666": { nombre: "Valentina Ruiz", rol: "Ingeniera de Requisitos", foto: pos6,
         criterios: {
             puntualidad: ["Hora de llegada", "Entrega de documentación"],
             calidad: ["Claridad en historias de usuario", "Precisión en levantamiento de datos"],
@@ -298,7 +305,7 @@ export function abrirModalCriterios() {
     document.getElementById('modal-criterios').classList.remove('oculto');
 }
 
-function cerrarModalCriterios() {
+export function cerrarModalCriterios() {
     document.getElementById('modal-criterios').classList.add('oculto');
 }
 
@@ -311,15 +318,26 @@ function cargarInputsEdicion(idContenedor, arrayCriterios) {
 }
 
 // Función para agregar una fila de input para un criterio
-function agregarCriterioInput(idContenedor, valor = "") {
+export function agregarCriterioInput(idContenedor, valor = "") {
     const contenedor = document.getElementById(idContenedor);
     const div = document.createElement('div');
     div.className = 'item-criterio-edit';
 
-    div.innerHTML = `
-        <input type="text" class="input-brutalista" value="${valor}" placeholder="Escriba el criterio...">
-        <button class="btn-eliminar-criterio" onclick="eliminarCriterioInput(this, '${idContenedor}')">X</button>
-    `;
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'input-brutalista';
+    input.value = valor;
+    input.placeholder = 'Escriba el criterio...';
+
+    const botonEliminar = document.createElement('button');
+    botonEliminar.type = 'button';
+    botonEliminar.className = 'btn-eliminar-criterio';
+    botonEliminar.textContent = 'X';
+    botonEliminar.addEventListener('click', () => {
+        eliminarCriterioInput(botonEliminar, idContenedor);
+    });
+
+    div.append(input, botonEliminar);
     contenedor.appendChild(div);
 }
 

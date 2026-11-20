@@ -2,6 +2,13 @@ import '../../styles/common.css'
 
 import { createElement } from 'react'
 import Navbar from '../../components/Navbar.jsx'
+import {
+  agregarCriterioInput,
+  abrirModalCriterios,
+  buscarParaEvaluacion,
+  cerrarModalCriterios,
+  guardarCriterios,
+} from '../../Script.js'
 
 function Evaluaciones() {
   return (
@@ -29,7 +36,7 @@ function Evaluaciones() {
           className="input-brutalista"
           placeholder="Buscar empleado por documento (Ej: 1111111111)"
         />
-        <button className="btn-buscar" onclick="buscarParaEvaluacion()">
+        <button className="btn-buscar" onClick={buscarParaEvaluacion}>
           Buscar Personal
         </button>
       </div>
@@ -92,7 +99,7 @@ function Evaluaciones() {
             </ul>
           </div>
         </div>
-        <button className="btn-editar-grande" onclick="abrirModalCriterios()">
+        <button className="btn-editar-grande" onClick={abrirModalCriterios}>
           Editar Criterios de Evaluación
         </button>
       </div>
@@ -111,7 +118,7 @@ function Evaluaciones() {
             <div id="edit-puntualidad" className="lista-inputs-criterios" />
             <button
               className="btn-agregar-criterio"
-              onclick="agregarCriterioInput('edit-puntualidad')"
+              onClick={() => agregarCriterioInput('edit-puntualidad')}
             >
               + Añadir Criterio
             </button>
@@ -122,7 +129,7 @@ function Evaluaciones() {
             <div id="edit-calidad" className="lista-inputs-criterios" />
             <button
               className="btn-agregar-criterio"
-              onclick="agregarCriterioInput('edit-calidad')"
+              onClick={() => agregarCriterioInput('edit-calidad')}
             >
               + Añadir Criterio
             </button>
@@ -133,7 +140,7 @@ function Evaluaciones() {
             <div id="edit-colaboracion" className="lista-inputs-criterios" />
             <button
               className="btn-agregar-criterio"
-              onclick="agregarCriterioInput('edit-colaboracion')"
+              onClick={() => agregarCriterioInput('edit-colaboracion')}
             >
               + Añadir Criterio
             </button>
@@ -144,7 +151,7 @@ function Evaluaciones() {
             <div id="edit-cumplimiento" className="lista-inputs-criterios" />
             <button
               className="btn-agregar-criterio"
-              onclick="agregarCriterioInput('edit-cumplimiento')"
+              onClick={() => agregarCriterioInput('edit-cumplimiento')}
             >
               + Añadir Criterio
             </button>
@@ -154,14 +161,14 @@ function Evaluaciones() {
           <button
             type="button"
             className="btn-cancelar"
-            onclick="cerrarModalCriterios()"
+            onClick={cerrarModalCriterios}
           >
             Cancelar
           </button>
           <button
             type="button"
             className="btn-accion-principal"
-            onclick="guardarCriterios()"
+            onClick={guardarCriterios}
           >
             Guardar Cambios
           </button>

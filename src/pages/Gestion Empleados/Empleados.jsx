@@ -2,6 +2,7 @@
 import '../../styles/common.css'
 import { createElement } from 'react'
 import Navbar from '../../components/Navbar.jsx'
+import { buscarEmpleado } from '../../Script.js'
 
 function Empleados() {
   return (
@@ -27,7 +28,7 @@ function Empleados() {
           className="input-brutalista"
           placeholder="Buscar por documento (Ej: 1111111111)"
         />
-        <button className="btn-buscar" onclick="buscarEmpleado()">
+        <button className="btn-buscar" onClick={buscarEmpleado}>
           Buscar
         </button>
       </div>
